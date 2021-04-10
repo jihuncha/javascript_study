@@ -1,8 +1,8 @@
 var person = {
     'last-name' : 'Lee',
     1:10,
-    'name' : 'test'
-    // name : "testset"
+    'name' : 'test',
+    'last' : "1234"
 }
 
 var name = "test22"
@@ -18,6 +18,9 @@ var name = "test22"
 // console.log(person['1']); //10
 
 //식별자로 인식됨.
-console.log(person.last-name); //NaN ???
+// -의 의미...?
+console.log(person.last-name); //NaN ??????????
+console.log(person.last); //undefined
+console.log(name); // test22
 
 

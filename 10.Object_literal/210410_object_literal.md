@@ -5,8 +5,8 @@
 
 
 ### 객체 타입 특징
-1. 다양한 타입의 값을 하나의 단위로 구성한 복합자료구조
-2. 원시 값은 변경 불가능하지만, 객체는 변경가능한 값 (Mutable value)
+- 다양한 타입의 값을 하나의 단위로 구성한 복합자료구조
+- 원시 값은 변경 불가능하지만, 객체는 변경가능한 값 (Mutable value)
    
 
 ~~~javascript
@@ -21,9 +21,9 @@ name, age -> property key
 
 'Lee', 20 -> property value
 
-1. 자바스크립트에서 사용되는 모든 값은 프로퍼티 값이 될 수 있다.
-2. 자바스크립트 함수는 일급 객체이므로 값으로 취급할 수 있다.
-3. 프로퍼티의 값이 함수인 경우는 일반 함수와 구별하기 위해 method라고 부른다.
+- 자바스크립트에서 사용되는 모든 값은 프로퍼티 값이 될 수 있다.
+- 자바스크립트 함수는 일급 객체이므로 값으로 취급할 수 있다.
+- 프로퍼티의 값이 함수인 경우는 일반 함수와 구별하기 위해 method라고 부른다.
 
 #### 일급객체
 * 일급객체(First-class Object)란 다른 객체들에 일반적으로 적용 가능한 연산을 모두 지원하는 객체를 가리킨다.
@@ -51,9 +51,9 @@ var counter = {
 * 클래스(ES6)
 
 ### 객체 리터럴
-객체 생성 방법 중에서 가장 일반적인 방법
+- 객체 생성 방법 중에서 가장 일반적인 방법
 
-객체 리터럴은 중괄호({...}) 내에 0개 이상의 프로퍼티를 정의한다. 변수에 할당되는 시점에, 자바스크립트 엔진은 객체 리터럴을 해석해 객체를 생성함.
+- 객체 리터럴은 중괄호({...}) 내에 0개 이상의 프로퍼티를 정의한다. 변수에 할당되는 시점에, 자바스크립트 엔진은 객체 리터럴을 해석해 객체를 생성함.
 
 [예제 10-1] 객체리터럴
 ~~~javascript
@@ -147,7 +147,7 @@ obj[key] = 'world';
 console.log(obj); //{ hello: 'world' }
 ~~~
 
-### key로 사용할 수 있지만 의미가 없다!!
+### key로 사용할 수 있지만 의미가 없는 상황들
 * 빈 문자열을 프로퍼티 키로 사용해도 에러 발생하지 않는다. -> 빈 문자열이므로 의미 없음
 * var,function 등의 예약어를 key이름으로 해도 에러 발생하지않는다. -> 에상치 못한 에러가 발생 할 수 도 있으므로 사용하지 않음
 
@@ -225,7 +225,7 @@ console.log(person.age); //undefined
 console.log(person[name]); //name is not defined
 ~~~
 
-* 자바스크립트 식별자 네이밍 규칙이 맞지 않는 경우는 대괄호를 사용해라.
+* 자바스크립트 식별자 네이밍 규칙[4-7장]이 맞지 않는 경우는 대괄호 표기법을 사용해야한다.
 
 [예제 10-15]
 ~~~javascript
@@ -245,3 +245,146 @@ console.log(person[1]); //10 person[1] -> person['1']
 console.log(person['1']); //10
 
 ~~~
+
+### (참고) person.last-name 의 경우 Node.js환경과 브라우저 환경에서 값이 다르게 나온다. -> 10_15.js 참고...
+
+1. node.js의 경우
+   
+   - 자바스크립트 엔진의 경우 person.last를 먼저 평가한다. 
+   
+   - last가 없으므로 undefined - name으로 되어, name 식별자를 찾게 되나, name이라는 식별자가 없으므로 name is not defined로 정의된다.
+
+2. 브라우저의 경우
+   - name이라는 전역 변수가 존재한다.(전역 객체 window의 프로퍼티)
+
+   - 기본값이 빈 문자열이므로 NaN을 뱉어준다 (21.4 전역객체 참고)
+
+
+
+## 10.6 ~ 8 프로퍼티 값 갱신, 프로퍼티 동적 생성, 프로퍼티 삭제
+
+- delete 연산자는 객체의 프로퍼티를 삭제한다. 존재하지 않는 프로퍼티인 경우에는 무시한다.
+
+[예제 10-16, 10-17, 10-18]
+~~~javascript
+var person = {
+    name : "Lee"
+};
+
+person.name = "Kim";
+person.age = 12
+
+console.log(person.name); //Kim
+console.log(person.age); //12
+
+//age 프로퍼티 삭제.
+delete person.age;
+//존재하지않는 프로퍼티는 무시한다. 에러는 발생하지 않음.
+delete person.address;
+
+console.log(person); // { name: 'Kim' }
+~~~
+
+## 10.9 ES6에서 추가된 리터럴 확장 기능
+1. 프로퍼티 축약 표현
+ 
+- ES6의 경우 프로퍼티 값으로 변수를 사용하는 경우, 변수 이름과 프로퍼티 키가 동일한 이름의 경우 생략 가능하다. 이때 프로퍼티 키는 변수 이름으로 자동 생성됨.  
+
+[10-19 ES5]
+~~~javascript
+var x = 1, y = 2;
+
+var obj = {
+    x:x,
+    y:y
+};
+
+console.log(obj);
+~~~
+
+[10-20 ES6]
+~~~javascript
+//es6
+let x = 1, y = 2;
+
+const obj ={x,y};
+
+console.log(obj);  //{ x: 1, y: 2 }
+~~~
+
+2. 계산된 프로퍼티 이름
+
+- 문자열 또는 문자열로 타입을 변환할 수 있는 값으로 평가되는 표현식을 사용하여 프로퍼티 키를 동적으로 사용 할 수 있다. 단, 프로퍼티 키를 사용할 표현식을 대괄호([...])로 묶어야한다.
+
+2-1. ES5 - 객체 리터럴 외부에서 대괄호 표기법을 사용해야한다.
+
+[10-21]
+~~~javascript
+//es5
+var prefix = 'prop';
+var i = 0;
+
+var obj = {};
+
+obj[prefix + '-' + ++i] = i;
+obj[prefix + '-' + ++i] = i;
+obj[prefix + '-' + ++i] = i;
+
+console.log(obj); //{ 'prop-1': 1, 'prop-2': 2, 'prop-3': 3 }
+~~~
+
+2-1. ES6 - 프로퍼티 내부에서도 사용가능
+
+[10-22]
+~~~javascript
+//es6
+const prefix = 'prop';
+let i = 0;
+
+const obj = {
+    [`${prefix}-${++i}`]:i,
+    [`${prefix}-${++i}`]:i,
+    [`${prefix}-${++i}`]:i
+
+};
+
+console.log(obj); //{ 'prop-1': 1, 'prop-2': 2, 'prop-3': 3 }
+~~~
+
+3. 메서드 축약 표현
+   
+[10-23 ES5]
+~~~javascript
+//es5
+var obj = {
+    name :"Lee",
+    sayHi : function() {
+        console.log('Hi:' + this.name);
+    }
+};
+
+obj.sayHi(); //Hi: Lee
+~~~
+
+[10-24 ES6]
+~~~javascript
+//es6
+var obj = {
+    name :"Lee",
+    sayHi(){
+        console.log('Hi:' + this.name);
+    }
+
+};
+
+obj.sayHi(); //Hi: Lee
+~~~
+
+### (참고)
+- ES6에서 메서드 축약 표현으로 정의한 메서드는 프로퍼티에 할당된 함수와 다르게 동작을 한다. (26장 메서드 참고) 
+-  ES6 이전 사양에서는 메서드에 대한 정의가 없었다.
+-  ES6 사항에서는 메서드는 메서드 축약 표현으로 정의된 함수만 의미한다.
+-  ES6 사양에서는 정의한 메서드는 인스턴스를 생성 할 수 없다. (new 안됨)
+-  prototype 프로퍼티가 없고, 프로토타입도 생성하지않음(???)
+
+
