@@ -5,5 +5,6 @@ var person = {
     }
 };
 
-console.log(typeof person)
-console.log(person)
+console.log(typeof person);
+console.log(person);
+

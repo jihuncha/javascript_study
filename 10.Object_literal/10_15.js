@@ -5,7 +5,7 @@ var person = {
     'last' : "1234"
 }
 
-var name = "test22"
+var name = "test22";
 
 //console.log(person.'last-name'); //SyntaxError: Unexpected string
 // console.log(person.last-name); //ReferenceError: name is not defined

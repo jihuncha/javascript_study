@@ -12,9 +12,9 @@
 ~~~javascript
 var person = {
     //프로퍼티
-    name : 'Lee' 
+    name : 'Lee',
     age : 20
-}
+};
 ~~~
 
 name, age -> property key
@@ -37,7 +37,7 @@ var counter = {
     increase : function(){
         this.num++;
     }
-}
+};
 ~~~
 
 
@@ -64,14 +64,14 @@ var person = {
     }
 };
 
-console.log(typeof person) //object
-console.log(person) //{ name: 'Lee', sayHello: [Function: sayHello] }
+console.log(typeof person); //object
+console.log(person); //{ name: 'Lee', sayHello: [Function: sayHello] }
 ~~~
 
 [예제 10-2] 프로퍼티를 선언하지 않으면 빈 객체 생성
 ~~~javascript
 var empty = {};
-console.log(typeof empty)
+console.log(typeof empty);
 ~~~
 
 ### 참고
@@ -80,16 +80,16 @@ console.log(typeof empty)
 (ex) Object 생성자 함수의 예시
 ~~~javascript
 var person = new Object();
-console.log(person.name) //undefined
-console.log(person.email)
-console.log(person.birth)
+console.log(person.name); //undefined
+console.log(person.email);
+console.log(person.birth);
 
 person.name = "test";
 person.email = "test@example.com";
 person.birth = "1207";
-console.log(person.name) //test
-console.log(person.email)
-console.log(person.birth)
+console.log(person.name);//test
+console.log(person.email);
+console.log(person.birth);
 ~~~
 
 ## 10.3 프로퍼티
@@ -98,7 +98,7 @@ console.log(person.birth)
 ~~~javascript
 var person = {
     //property key 와 value
-    name : 'Lee' 
+    name : 'Lee',
     age : 20
 };
 ~~~
@@ -194,11 +194,9 @@ console.log(foo); //{ name: 'kim' }
 ~~~javascript
 var circle = {
     radius : 5,
-
     getDiameter :function(){
         return 2 * this.radius;
     }
-
 };
 
 console.log(circle.getDiameter()); //10
@@ -374,7 +372,6 @@ var obj = {
     sayHi(){
         console.log('Hi:' + this.name);
     }
-
 };
 
 obj.sayHi(); //Hi: Lee
