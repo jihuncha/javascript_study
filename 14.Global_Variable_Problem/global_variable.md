@@ -75,7 +75,7 @@ console.log(x);             //global
 * var 키워드로 선언한 전역 변수의 생명 주기는 전역 객체의 생명 주기와 일치
 * 브라우저 환경에서 var 키워드로 선언한 전역 변수는 웹페이지를 닫을 때까지 유효하다(브라우저 환경에서 전역 객체는 window이므로, var 키워드로 선언한 전역 변수는 전역 객체 window의 프로퍼티)
   
-  <img src="./global_lifecycle.png" alt="global_lifecycle" style="zoom:70%;" />
+  <img src="global_lifecycle.PNG" alt="global_lifecycle" style="zoom:70%;" />
 
 
 <hr>
