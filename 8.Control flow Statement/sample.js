@@ -57,18 +57,21 @@ outer: for(var i=0; i < 3 ; i++){
 //리턴 확인
 for(var i=0; i < 3 ; i++){
     for(var j=0; j<3; j++){
-        console.log('리턴');
+        console.log('+++++++return test');
         // i+j===3이면 outer라는 식별자가 붙은 레이블 for문을 탈출한다.
         if(i+j===3) return;
         console.log(`inner [${i}, ${j}]`);
     }
+
 }
+
+console.log('=======end return');
 
 function sum(a){
     console.log(a);
     for(var i=0; i < 3 ; i++){
         for(var j=0; j<3; j++){
-            console.log('리턴');
+            console.log('++++++++return');
             // i+j===3이면 outer라는 식별자가 붙은 레이블 for문을 탈출한다.
             if(i+j===3) return;
             console.log(`inner [${i}, ${j}]`);

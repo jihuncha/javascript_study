@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b3d9079-73b5-4e46-b370-d337b230470c" name="Default Changelist" comment="" />
+    <list default="true" id="4b3d9079-73b5-4e46-b370-d337b230470c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/8.Control flow Statement/sample.js" beforeDir="false" afterPath="$PROJECT_DIR$/8.Control flow Statement/sample.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/8.Control flow Statement/sample2.js" beforeDir="false" afterPath="$PROJECT_DIR$/8.Control flow Statement/sample2.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +28,8 @@
         <entry file="file://$PROJECT_DIR$/8.Control flow Statement/ControlFlowStatement.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="670">
-                <caret line="268" column="82" selection-start-line="268" selection-start-column="82" selection-end-line="268" selection-end-column="82" />
+              <first_editor relative-caret-position="295">
+                <caret line="244" lean-forward="true" selection-start-line="244" selection-end-line="244" />
               </first_editor>
               <second_editor />
             </state>
@@ -103,7 +107,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1617016271752" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1618037758939" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -135,15 +139,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616321749687</updated>
-      <workItem from="1616321753330" duration="7260000" />
+      <workItem from="1616321753330" duration="7814000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7260000" />
+    <option name="totallyTimeSpent" value="7814000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="718" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
@@ -242,8 +246,8 @@
     <entry file="file://$PROJECT_DIR$/8.Control flow Statement/ControlFlowStatement.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="670">
-            <caret line="268" column="82" selection-start-line="268" selection-start-column="82" selection-end-line="268" selection-end-column="82" />
+          <first_editor relative-caret-position="295">
+            <caret line="244" lean-forward="true" selection-start-line="244" selection-end-line="244" />
           </first_editor>
           <second_editor />
         </state>
